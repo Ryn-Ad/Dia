@@ -1,0 +1,183 @@
+body h1 {
+    color: #FFFFFF;
+    font-family: 'Lilita One', cursive;
+    font-size: 5rem;
+    font-weight: 400;
+    display: inline-flex;
+    flex-shrink: 0;
+    margin-left: 5vh;
+    margin-top: 2vh;
+    padding-top: 1vh;
+}
+
+.home-but {
+    color: #FFFFFF;
+    font-size: 82px;
+    display: inline;
+    text-decoration: none;
+    font-weight: 400;
+    flex-shrink: 0;
+    margin-left: 74%;
+    margin-top: 2px;
+}
+
+body h2 {
+    color: #000000;
+    font-family: 'Lilita One', cursive;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-top: -12vh;
+    padding-top: 5vh;
+    text-align: center;
+    display: block;
+    flex-shrink: 0;
+}
+
+body h3 {
+    color: #FF0000;
+    font-family: 'Lilita One', cursive;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-top: -12vh;
+    padding-top: 5vh;
+    text-align: center;
+    display: block;
+    flex-shrink: 0;
+}
+
+body p {
+    color: #000000;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    margin-top: -5vh;
+    display: block;
+    flex-shrink: 0;
+    margin-left: 7vh;
+    margin-bottom: 5vh;
+}
+
+body {
+    background: #5B7958;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+table {
+    font-family: 'Outfit', sans-serif;
+    width: 170vh;
+    border-radius: 25px;
+    outline: solid 7px #724731;
+    outline-offset: -7px;
+    margin: auto;
+    display: block;
+    background-color: #daf0d4;
+    margin-bottom: 50px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+th {
+    width: 170vh;
+    height: 50px;
+    font-size: 1.5rem;
+    background-color: #5B7958;
+    border-bottom: solid 7px #724731;
+    color: #FFFFFF;
+}
+
+td {
+    height: 40px;
+    font-size: 1rem;
+    border-left: 2px solid #727272;
+    border-bottom: 2px dotted #727272;
+}
+
+body h4 {
+    text-align: center;
+    color: #727272;
+    font-family: 'Lilita One', cursive;
+    margin: auto;
+    margin-top: 10vh;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+button {
+    font-family: 'Outfit', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    width: 25%;
+    height: 50px;
+    border-style: none;
+    border-radius: 115px;
+    background: #5B7958;
+    box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.headbar {
+    width: 102%;
+    margin: -2vh -2vh 0 -2vh;
+    height: 15vh;
+    background-image: url("/images/card.png");
+    background-color: #724731;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 15px 10px 5px rgba(0,0,0,0.25);
+}
+
+.cardbody {
+    border-radius: 110px;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 10px 5px rgba(0,0,0,0.25);
+    margin: 120px 33px 33px 32px;
+    height: 625px;
+    flex-shrink: 0;
+}
+
+.cardbody-dg {
+    border-radius: 110px;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 10px 5px rgba(0,0,0,0.25);
+    margin: 120px 33px 33px 32px;
+    padding-bottom: 65px;
+    flex-shrink: 0;
+}
+
+.ctr {
+    align-items: center;
+    text-align: center;
+}
+
+.back-a {
+    font-family: 'Outfit', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    width: 50vh;
+    height: 7vh;
+    border-style: none;
+    border-radius: 115px;
+    background: #5B7958;
+    box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+    padding: 2vh 20vh 2vh 20vh;
+}
+
+select {
+    font-family: 'Outfit', sans-serif;
+    border-radius: 5px;
+    width: 155px;
+    padding-left: 10px;
+    font-size: 1rem;
+    background: #ffffff;
+    border: solid 2px #ffffff;
+}
+
+option {
+    font-family: 'Outfit', sans-serif;
+    background-color: #ffffff;
+    font-size: 1rem;
+}
