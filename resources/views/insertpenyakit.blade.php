@@ -12,6 +12,7 @@
         <title>Tambah Data Penyakit</title>
     </head>
     <body>
+        @auth
         <div class="sidebar">
             <div class="logo_content">
                 <div class="title_name">DiaCo</div>
@@ -67,14 +68,15 @@
         <div class="one_text">TAMBAH DATA PENYAKIT</div>
             <div class="add_space">
                 </div>
-                    <form>
+                    <form action="/proses-penyakit" method="POST">
+                        @csrf
                     <label for="kode_penyakit">Kode Penyakit :</label>
                     <input type="text" id="kode_penyakit" name="kode_penyakit">
                     <label for="nama_penyakit">Nama Penyakit :</label>
                     <input type="text" id="nama_penyakit" name="nama_penyakit">
                     <label for="solusi_penyakit">Solusi Penyakit :</label>
                     <input type="textarea" id="solusi_penyakit" name="solusi_penyakit">
-                    <button class="tambah" type="submit">Tambah</button>
+                    <button class="tambah">Tambah</button>
                     </form>
                 </div>
 
@@ -86,6 +88,13 @@
                 sidebar.classList.toggle("active");
             }
         </script>
+        @endauth
+
+        @guest
+        <div>
+            <h1>403 | Forbidden Access</h1>
+        </div>
+        @endguest
     </body>
 </html>
     

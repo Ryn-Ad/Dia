@@ -8,8 +8,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link href="{{ asset('/css/adminstyle2.css') }}" rel="stylesheet">
-        <title>Tambah Data Penyakit</title>
+        <link href="{{ asset('/css/adminstyle.css') }}" rel="stylesheet">
+        <title>Edit Data Penyakit</title>
     </head>
     <body>
         @auth
@@ -65,16 +65,19 @@
         </div>
 
         <div class="main_content_one">
-        <div class="one_text">TAMBAH DATA PENYAKIT</div>
+        <div class="one_text">EDIT DATA PENYAKIT</div>
             <div class="add_space">
                 </div>
-                    <form action="/proses-gejala" method="POST">
+                    <form action="/edit-penyakit/{{$penyakit->index_penyakit}}" method="POST">
                         @csrf
-                        <label for="kode_gejala">Kode Gejala :</label>
-                        <input type="text" id="kode_gejala" name="kode_gejala">
-                        <label for="nama_gejala">Nama Gejala :</label>
-                        <input type="text" id="nama_gejala" name="nama_gejala">
-                        <button>Tambah</button>
+                        @method('PUT')
+                    <label for="kode_penyakit">Kode Penyakit :</label>
+                    <input type="text" id="kode_penyakit" name="kode_penyakit" value="{{$penyakit->kode_penyakit}}">
+                    <label for="nama_penyakit">Nama Penyakit :</label>
+                    <input type="text" id="nama_penyakit" name="nama_penyakit" value="{{$penyakit->nama_penyakit}}">
+                    <label for="solusi_penyakit">Solusi Penyakit :</label>
+                    <input type="textarea" id="solusi_penyakit" name="solusi_penyakit" value="{{$penyakit->solusi_penyakit}}">
+                    <button class="tambah">Simpan</button>
                     </form>
                 </div>
 
@@ -87,6 +90,7 @@
             }
         </script>
         @endauth
+
         @guest
         <div>
             <h1>403 | Forbidden Access</h1>

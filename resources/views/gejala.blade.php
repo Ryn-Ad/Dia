@@ -28,12 +28,16 @@
             <td>{{$g_admin->nama_gejala}}</td>
             <td>{{$g_admin->index_gejala}}</td>
             <td>
-                <a href="#" class="edit">
+                <a href="/edit-gejala/{{$g_admin->index_gejala}}" class="edit">
                     <i class='bx bxs-edit'></i>
                 </a>
-                <a href="/delete-gejala" class="remove">
+                <a href="/delete-gejala/{{$g_admin->index_gejala}}" class="remove" onclick="event.preventDefault(); document.getElementById('submit-form{{$g_admin->index_gejala}}').submit();">
                     <i class='bx bxs-trash'></i>
                 </a>
+                <form action="/delete-gejala/{{$g_admin->index_gejala}}" id="submit-form{{$g_admin->index_gejala}}" method="POST" class="hidden">
+                    @csrf
+                    @method('DELETE')
+                </form>
             </td>
         </tr>
         @endforeach

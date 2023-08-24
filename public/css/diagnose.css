@@ -181,3 +181,8 @@ option {
     background-color: #ffffff;
     font-size: 1rem;
 }
+
+.wrapme {
+    overflow-wrap: break-word;
+    hyphens: manual;
+}

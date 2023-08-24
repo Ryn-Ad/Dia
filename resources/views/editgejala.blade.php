@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="{{ asset('/css/adminstyle2.css') }}" rel="stylesheet">
-        <title>Tambah Data Penyakit</title>
+        <title>Edit Data Gejala</title>
     </head>
     <body>
         @auth
@@ -65,16 +65,17 @@
         </div>
 
         <div class="main_content_one">
-        <div class="one_text">TAMBAH DATA PENYAKIT</div>
+        <div class="one_text">EDIT DATA GEJALA</div>
             <div class="add_space">
                 </div>
-                    <form action="/proses-gejala" method="POST">
+                    <form action="/edit-gejala/{{$gejala->index_gejala}}" method="POST">
                         @csrf
+                        @method('PUT')
                         <label for="kode_gejala">Kode Gejala :</label>
-                        <input type="text" id="kode_gejala" name="kode_gejala">
+                        <input type="text" id="kode_gejala" name="kode_gejala" value="{{$gejala->kode_gejala}}">
                         <label for="nama_gejala">Nama Gejala :</label>
-                        <input type="text" id="nama_gejala" name="nama_gejala">
-                        <button>Tambah</button>
+                        <input type="text" id="nama_gejala" name="nama_gejala" value="{{$gejala->nama_gejala}}">
+                        <button>Simpan</button>
                     </form>
                 </div>
 

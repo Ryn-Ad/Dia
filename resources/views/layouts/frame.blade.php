@@ -12,6 +12,8 @@
         <title>@yield('title')</title>
     </head>
     <body>
+
+    @auth
         <div class="sidebar">
             <div class="logo_content">
                 <div class="title_name">DiaCo</div>
@@ -56,7 +58,7 @@
                             <div class="role">Administrator</div>
                         </div>
                     </div>
-                    <a href="/admin" class="log_out">
+                    <a href="/logout" class="log_out">
                         <i class='bx bx-log-out' id="log_out"></i>
                     </a>
                 </div>
@@ -75,5 +77,12 @@
                 sidebar.classList.toggle("active");
             }
         </script>
+    @endauth
+
+    @guest
+    <div>
+        <h1>403 | Forbidden Access</h1>
+    </div>
+    @endguest
     </body>
 </html>

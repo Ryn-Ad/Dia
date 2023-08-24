@@ -425,3 +425,19 @@ input {
     border-style: none;
     text-decoration: none;
 }
+
+.headsol {
+    margin-left: 90px;
+    font-size: 2rem;
+}
+
+.textareawide {
+    font-size: 1.5rem;
+    margin-left: 80px;
+    margin-top: 10px;
+    width: 800px;
+    height: 350px;
+    text-align: left;
+    overflow-wrap: break-word;
+    hyphens: manual;
+}

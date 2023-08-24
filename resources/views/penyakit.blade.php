@@ -29,14 +29,18 @@
             <td>{{$p_admin->kode_penyakit}}</td>
             <td>{{$p_admin->nama_penyakit}}</td>
             <td>{{$p_admin->index_penyakit}}</td>
-            <td><a href="#" class="solusi_button">Cek Solusi</a></td>
+            <td><a href="/cek-solusi/{{$p_admin->index_penyakit}}" class="solusi_button">Cek Solusi</a></td>
             <td>
-                <a href="#" class="edit">
+                <a href="/edit-penyakit/{{$p_admin->index_penyakit}}" class="edit">
                     <i class='bx bxs-edit'></i>
                 </a>
-                <a href="#" class="remove">
+                <a href="/delete-penyakit/{{$p_admin->index_penyakit}}" class="remove" onclick="event.preventDefault(); document.getElementById('submit-form-penyakit{{$p_admin->index_penyakit}}').submit();">
                     <i class='bx bxs-trash'></i>
                 </a>
+                <form action="/delete-penyakit/{{$p_admin->index_penyakit}}" id="submit-form-penyakit{{$p_admin->index_penyakit}}" method="POST" class="hidden">
+                    @csrf
+                    @method('DELETE')
+                </form>
             </td>
         </tr>
         @endforeach

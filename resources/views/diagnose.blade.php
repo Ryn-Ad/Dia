@@ -20,7 +20,8 @@
             <h2>Diagnose</h2>
             <p>Harap untuk memilih gejala yang terdapat pada tanaman tembakau anda:</p>
             <div class="ctr">
-                <form>
+                <form action="/proses-diagnose" method="POST">
+                    @csrf
                     <table>
                         <colgroup>
                             <col span="1" style="width: 20%;">
@@ -37,17 +38,17 @@
                             <td>{{$g_diagnose->kode_gejala}}</td>
                             <td>{{$g_diagnose->nama_gejala}}</td>
                             <td>
-                                <select name="value_gejala" id="g_opt">
+                                <select name="value_gejala" id="value_gejala">
                                     <option value="1" disabled selected>Pilih jika sesuai</option>
-                                    <option value="1" {{old('value_gejala')==1?'selected':''}}>Tidak</option>
-                                    <option value="2" {{old('value_gejala')==2?'selected':''}}>Kemungkinan</option>
-                                    <option value="3" {{old('value_gejala')==3?'selected':''}}>Ya</option>
+                                    <option value="1" @selected($g_diagnose->value_gejala === '1')>Tidak</option>
+                                    <option value="2" @selected($g_diagnose->value_gejala === '2')>Kemungkinan</option>
+                                    <option value="3" @selected($g_diagnose->value_gejala === '3')>Ya</option>
                                 </select>
                             </td>
                         </tr>
                         @endforeach
                     </table>
-                    <button type="submit">Cek Penyakit</button>
+                    <button>Cek Penyakit</button>
                 </form>
             </div>    
         </div>

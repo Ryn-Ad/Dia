@@ -14,30 +14,14 @@
         <div class="logcard logtexture">
             <h1>DiaCo</h1>
             <h2>Admin Login</h2>
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="/admin-login">
                 @csrf
-                <label for="user">Username :</label> <br>
-                <input id="user" type="text" class="form-control @error('user') is-invalid @enderror" name="user" value="{{ old('user') }}" required autocomplete="user" autofocus>
-
-                @error('user')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                <label for="name">Username :</label> <br>
+                <input id="name" type="text" name="name" required>
                 <br>
-
                 <label for="password">Password :</label> <br>
-                <input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password" autofocus>
-
-                @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-
-                <button type="submit">
-                    Login
-                </button>
+                <input id="password" type="password" name="password" required>
+                <button>Login</button>
             </form>
         </div>
     </body>

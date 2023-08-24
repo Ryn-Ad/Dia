@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="{{ asset('/css/diagnose.css') }}" rel="stylesheet">
-        <title>Diagnose</title>
+        <title>Solusi</title>
     </head>
     <body>
         <div class="headbar">
@@ -17,13 +17,10 @@
             <a class="home-but" href="/"><i class='bx bxs-home'></i></a>
         </div>
         <div class="cardbody ctr">
-            <h2>Uh Oh!<br>
-                Penyakit pada tembakau<br>
-                Anda berupa:</h2>
-            <h3>{{$penyakit->nama_penyakit}}</h3>
-                <form action="/guestsolusi/{{$penyakit->index_penyakit}}" method="GET">
-                    <button>Cek Solusi</button>
-                </form>
+            <h2>Solusi dari penyakit<br>
+                {{$penyakit->nama_penyakit}}</h2>
+            <p class="wrapme">{{$penyakit->solusi_penyakit}}</p>
+                    <button onclick="history.back()">Kembali</button>
         </div>
     </body>
 </html>
