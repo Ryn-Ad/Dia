@@ -19,7 +19,7 @@ Route::get('/', [diagnoseController::class, 'homeView']);
 Route::get('/diagnose', [diagnoseController::class, 'diagnoseView']);
 Route::post('/proses-diagnose', [diagnoseController::class, 'prosesDiagnose']);
 Route::get('/disease', [diagnoseController::class, 'diseaseView']);
-Route::get('/guestsolusi', [diagnoseController::class, 'guestSolusi'])->name('Solusi');
+Route::get('/guestsolusi/{penyakit}', [diagnoseController::class, 'guestSolusi'])->name('Solusi');
 Route::get('/404disease', function () {return view('404disease');});
 
 Route::get('/admin', function () {return view('adminlog');});

@@ -20,22 +20,79 @@ class diagnoseController extends Controller
         return view('diagnose',["gejala"=>$result]);
     }
 
-    public function prosesDiagnose(Gejala $gejala, Request $request) {
-        $validateData = $request->validate([
-            'value_gejala' => 'required',
-        ]);
-
-        $gejala->update($validateData);
+    public function prosesDiagnose(Request $request) {
+        foreach($request->input('gejalas') as $gejalaId => $newValue) {
+            $gejala = Gejala::find($gejalaId);
+            if ($gejala) {
+                $gejala->value_gejala = $newValue;
+                $gejala->save();
+            }
+            else {
+                $gejala->value_gejala = 1;
+                $gejala->save();
+            }
+        }
         return redirect('/disease');
     }
 
     public function diseaseView() {
-        $proses = Gejala::get('index_gejala')->where('value_gejala', '>', 1);
+        $proses = Gejala::where('value_gejala', '>', 1)->pluck('index_gejala')->toArray();
         
-        if($proses === 1 && $proses === 2) {
-            $result = DB::select("SELECT * from penyakit WHERE index_penyakit=1");
-            return redirect('/disease', ["penyakit"=>$result]);
+        if(in_array(1, $proses) && in_array(2, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='1'");
+            return view('disease', ["penyakit"=>$result]);
         }
+        
+        elseif(in_array(3, $proses) && in_array(4, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='2'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(5, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='3'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(6, $proses) && in_array(7, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='4'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(8, $proses) && in_array(9, $proses) && in_array(10, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='5'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(11, $proses) && in_array(12, $proses) && in_array(13, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='6'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(14, $proses) && in_array(15, $proses) && in_array(16, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='7'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(12, $proses) && in_array(17, $proses) && in_array(18, $proses) && in_array(19, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='8'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(20, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='9'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(21, $proses) && in_array(22, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='10'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
+        elseif(in_array(23, $proses) && in_array(24, $proses)) {
+            $result = DB::select("SELECT * from penyakit WHERE index_penyakit='11'");
+            return view('disease', ["penyakit"=>$result]);
+        }
+
         else {
             return redirect('/404disease');
         }

@@ -20,10 +20,12 @@
             <h2>Uh Oh!<br>
                 Penyakit pada tembakau<br>
                 Anda berupa:</h2>
+                @foreach ($penyakit as $penyakit)
             <h3>{{$penyakit->nama_penyakit}}</h3>
                 <form action="/guestsolusi/{{$penyakit->index_penyakit}}" method="GET">
                     <button>Cek Solusi</button>
                 </form>
+                @endforeach
         </div>
     </body>
 </html>
